@@ -27,7 +27,13 @@ describe VendingMachine do
     it 'rejects pennies' do
       subject.insert('1')
       expect(subject.display).to eq('INSERT COIN')
-      expect(subject.return).to eq('1')
+      expect(subject.coin_return).to eq('1')
+    end
+
+    it 'rejects non-coins' do
+      subject.insert('not a coin')
+      expect(subject.display).to eq('INSERT COIN')
+      expect(subject.coin_return).to eq('not a coin')
     end
   end
 

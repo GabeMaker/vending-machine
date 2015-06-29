@@ -1,19 +1,19 @@
 class VendingMachine
 
-  attr_reader :display
+  VALID_COINS = ['5', '10', '25']
+
+  attr_reader :display, :coin_return
 
   def initialize
     @display = 'INSERT COIN'
   end
 
   def insert(coin)
-    if ['5', '10', '25'].include? coin
+    if VALID_COINS.include? coin
       @display = "#{coin} cents"
+    else
+      @coin_return = coin
     end
-  end
-
-  def return
-    '1'
   end
 
 end
