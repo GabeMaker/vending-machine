@@ -7,7 +7,13 @@ class VendingMachine
   end
 
   def insert(coin)
-    @display = "#{coin} cents"
+    if ['5', '10', '25'].include? coin
+      @display = "#{coin} cents"
+    end
+  end
+
+  def return
+    '1'
   end
 
 end

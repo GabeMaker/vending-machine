@@ -23,4 +23,12 @@ describe VendingMachine do
     end
   end
 
+  context 'invalid coins' do
+    it 'rejects pennies' do
+      subject.insert('1')
+      expect(subject.display).to eq('INSERT COIN')
+      expect(subject.return).to eq('1')
+    end
+  end
+
 end
