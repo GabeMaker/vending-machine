@@ -7,7 +7,7 @@ class VendingMachine
   end
 
   def insert(coin)
-    @display = '5 cents'
+    @display = "#{coin} cents"
   end
 
 end
