@@ -6,11 +6,13 @@ class VendingMachine
 
   def initialize
     @display = 'INSERT COIN'
+    @total = 0
   end
 
   def insert(coin)
     if VALID_COINS.include? coin
-      @display = "#{coin} cents"
+      @total += coin.to_i
+      @display = "#{@total} cents"
     else
       @coin_return = coin
     end
