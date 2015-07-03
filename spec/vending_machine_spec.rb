@@ -22,7 +22,7 @@ describe VendingMachine do
       expect(subject.display).to eq('25 cents')
     end
 
-    it 'mixed coins' do
+    it 'for mixed coins' do
       subject.insert('5')
       subject.insert('10')
       expect(subject.display).to eq('15 cents')
@@ -41,6 +41,7 @@ describe VendingMachine do
       expect(subject.display).to eq('INSERT COIN')
       expect(subject.coin_return).to eq('not a coin')
     end
+
   end
 
 end
